@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'ks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',#'django.db.backends.sqlite3',
+        'ENGINE': 'mysql-connector-python',#'django.db.backends.mysql',#'django.db.backends.sqlite3',
         'NAME': 'ks',#os.path.join(BASE_DIR, 'db.sqlite3'),
         'USRE':'root',
         'PASSWORD':'jerome@135',
