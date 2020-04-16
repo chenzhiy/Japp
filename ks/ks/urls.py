@@ -17,11 +17,20 @@ from django.contrib import admin
 from django.urls import path,include,re_path
 
 from django.conf.urls import url
-from . import view
+from . import view, testdb, search, search2
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     url(r'^$',view.hello),
     #path('hello/',view.hello),
     # re_path(r'^index/$',view.hello,name='hello'),
+
+    url(r'^testdb$',testdb.testdb),
+    url(r'^register$',testdb.register),
+    url(r'^register-form$',search.register_form),
+    url(r'^login$', testdb.login),
+    url(r'^login-form$', search.login_form),
+    url(r'^search-form$',search.search_form),
+    url(r'^search$',search.search),
+    url(r'search-post',search2.search_post),
 ]

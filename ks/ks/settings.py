@@ -38,13 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'KsModel',#添加此项
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',#注释掉跨域的一些验证
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -80,6 +81,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'Changeme@135',
         'HOST': '127.0.0.1',
+        # 'HOST': '129.211.82.250',
         'PORT': '3306',
     }
 }
