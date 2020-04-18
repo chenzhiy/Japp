@@ -3,7 +3,9 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
-from KsModel.models import Test,User
+from KsModel.models import Test, User
+
+import json
 
 #注册用户
 def register(request):
@@ -39,11 +41,21 @@ def login(request):
 		ctx['password'] = request.POST.get('password')
 		print(ctx['username'])
 		print(ctx['password'])
-		return HttpResponse("200")
+
+		resultData = {'code':0, 'message':'success', 'data': {'userName': ctx['username'], 'balance': 0, 'starLevel': 0}}
+		jVar = json.dumps(resultData)
+		return HttpResponse(jVar)
 		# return render(request, "Success.html", ctx)
 
 	return HttpResponse("404")
 
+#测试网络请求
+def test_network(request):
+	if request.method == "GET":
+		resultData = {'code': 0, 'message': 'success', 'data': {'userName': 'jacker', 'balance': 0, 'starLevel': 0}}
+		jVar = json.dumps(resultData)
+		return HttpResponse(jVar)
+	return HttpResponse("404")
 #操作数据库
 def testdb(request):
 	#version 1

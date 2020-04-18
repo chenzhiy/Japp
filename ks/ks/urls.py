@@ -26,6 +26,7 @@ urlpatterns = [
     # re_path(r'^index/$',view.hello,name='hello'),
 
     url(r'^testdb$',testdb.testdb),
+    url(r'^test-network$',testdb.test_network),
     url(r'^register$',testdb.register),
     url(r'^register-form$',search.register_form),
     url(r'^login$', testdb.login),
