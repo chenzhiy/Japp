@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^testdb$',testdb.testdb),
     url(r'^test-network$',testdb.test_network),
     url(r'^register$',testdb.register),
+    url(r'^home',testdb.home),
     url(r'^register-form$',search.register_form),
     url(r'^login$', testdb.login),
     url(r'^login-form$', search.login_form),
